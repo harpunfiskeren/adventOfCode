@@ -7,6 +7,7 @@ manipulate memory with pointers. It also looks nice.
 
 - No LLM/code completions allowed. Except for writing tests, of course.
 - No looking up the answer.
+- Read other solutions when you are done. Learn how other developers did it.
 
 ### ⭐ Style guide for myself
 
