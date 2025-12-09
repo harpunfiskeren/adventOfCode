@@ -1,9 +1,9 @@
-package main
+package part1
 
 import (
 	"adventOfCode"
 	"bufio"
-	"log"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -11,7 +11,7 @@ import (
 var dial = 50
 var zeroCount = 0
 
-func main() {
+func Run() {
 	file, _ := adventOfCode.OpenInput("2025", "day1", "input")
 	scanner := bufio.NewScanner(file)
 
@@ -20,7 +20,7 @@ func main() {
 		instruction := parseInputLineToInstruction(line)
 		moveDial(instruction)
 	}
-	log.Println("Total times dial was 0: ", zeroCount)
+	fmt.Println("Total times dial was 0: ", zeroCount)
 }
 
 type Direction string
