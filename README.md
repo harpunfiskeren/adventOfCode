@@ -10,5 +10,5 @@ manipulate memory with pointers. It also looks nice.
 
 ### ⭐ Style guide for myself
 
-- Focus on readability
-- Prefer helper functions with clear names over large blocks of code
+- Focus on readability.
+- Prefer helper functions with clear names over large blocks of code.
