@@ -1,4 +1,4 @@
-package part1
+package part2
 
 import (
 	"adventOfCode"
@@ -14,20 +14,36 @@ func Run() {
 	scanner.Scan()
 
 	ranges := parseInputToRanges(scanner.Text())
-
 	var total int
 
 	for _, oneRange := range ranges {
-		current := oneRange[0]
-		for current <= oneRange[1] {
-			str := strconv.Itoa(current)
-			if str[:len(str)/2] == str[len(str)/2:] {
-				total += current
+		currentNumberInRange := oneRange[0]
+
+		for currentNumberInRange <= oneRange[1] {
+			str := strconv.Itoa(currentNumberInRange)
+
+			if isInvalid(str) {
+				total += currentNumberInRange
 			}
-			current++
+			currentNumberInRange++
 		}
 	}
-	fmt.Println("Result part 1: ", total)
+	fmt.Println("Result part 2: ", total)
+}
+
+func isInvalid(str string) bool {
+	for i := 1; i <= len(str)/2; i++ {
+		sequence := str[:i]
+		expectedStr := ""
+		for i := 0; i < len(str)/len(sequence); i++ {
+			expectedStr += sequence
+		}
+
+		if str == expectedStr {
+			return true
+		}
+	}
+	return false
 }
 
 func parseInputToRanges(s string) [][]int {
